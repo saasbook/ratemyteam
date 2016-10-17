@@ -1,0 +1,4 @@
+tmp/
+log/
+.byebug*
+db/test.sqlite3
