@@ -5,7 +5,7 @@ class Session
   require 'canvas-api'
   
   attr_reader :canvas, :course_id, :course_name, :student_id
-  attr_reader :other_students
+  attr_reader :other_students, :errors
 
   def initialize(params={})
     @canvas = Canvas::API.new(
@@ -15,14 +15,13 @@ class Session
     @course_id = params[:custom_canvas_course_id]
     @course_name = params[:context_title]
     @other_students = []
+    @errors = ActiveModel::Errors.new
   end
 
   def populate_rating_info
-    
-  end
-
-  def get_student_info(canvas_uid)
-    student = canvas.get "/api/v1/users/#{canvas_uid}"
+    self.errors.add(:base, "You don't appear to be in any groups.") and return unless
+      members = find_group_for_student
+    @other_students = members.map { |student| Student.from_hash(student) }
   end
 
   def groups_in_course

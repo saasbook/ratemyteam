@@ -15,11 +15,13 @@ ActiveRecord::Schema.define(version: 20161016233354) do
 
   create_table "iterations", force: :cascade do |t|
     t.string   "description"
+    t.string   "lms_courseid"
     t.datetime "start"
     t.datetime "end"
   end
 
   create_table "ratings", force: :cascade do |t|
+    t.integer "stars"
     t.integer "student_id"
     t.integer "rater_id"
     t.integer "iteration_id"
@@ -28,8 +30,7 @@ ActiveRecord::Schema.define(version: 20161016233354) do
   create_table "students", force: :cascade do |t|
     t.string "lms_sid"
     t.string "institution_sid"
-    t.string "given_name"
-    t.string "family_name"
+    t.string "name"
   end
 
 end

@@ -140,6 +140,7 @@ GEM
     multi_json (1.12.1)
     multi_test (0.1.2)
     nenv (0.3.0)
+    nested_scaffold (1.0.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
@@ -274,6 +275,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  nested_scaffold
   pg
   rails (= 4.2.6)
   rails_12factor
