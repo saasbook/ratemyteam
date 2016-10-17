@@ -5,6 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Description</th>
+      <th>Lms courseid</th>
+      <th>Start</th>
+      <th>End</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +16,10 @@
   <tbody>
     <% @iterations.each do |iteration| %>
       <tr>
+        <td><%= iteration.description %></td>
+        <td><%= iteration.lms_courseid %></td>
+        <td><%= iteration.start %></td>
+        <td><%= iteration.end %></td>
         <td><%= link_to 'Show', iteration %></td>
         <td><%= link_to 'Edit', edit_iteration_path(iteration) %></td>
         <td><%= link_to 'Destroy', iteration, method: :delete, data: { confirm: 'Are you sure?' } %></td>

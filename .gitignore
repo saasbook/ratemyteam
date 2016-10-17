@@ -3,3 +3,5 @@ log/
 .byebug*
 db/test.sqlite3
 config/application.yml
+#*
+.#*

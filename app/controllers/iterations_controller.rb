@@ -25,6 +25,9 @@ class IterationsController < ApplicationController
   # POST /iterations
   # POST /iterations.json
   def create
+    #ActionController::Parameters.permit_all_parameters
+    #params.require(:iteration).permit(:description, :start, :end, :lms_courseid)
+    params.permit!
     @iteration = Iteration.new(iteration_params)
 
     respond_to do |format|
@@ -41,6 +44,7 @@ class IterationsController < ApplicationController
   # PATCH/PUT /iterations/1
   # PATCH/PUT /iterations/1.json
   def update
+    params.require(:iteration).permit(:description, :start, :end, :lms_courseid)
     respond_to do |format|
       if @iteration.update(iteration_params)
         format.html { redirect_to @iteration, notice: 'Iteration was successfully updated.' }

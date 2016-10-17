@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @iteration.description %>
+</p>
+
+<p>
+  <strong>Lms courseid:</strong>
+  <%= @iteration.lms_courseid %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @iteration.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @iteration.end %>
+</p>
+
 <%= link_to 'Edit', edit_iteration_path(@iteration) %> |
 <%= link_to 'Back', iterations_path %>

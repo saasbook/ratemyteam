@@ -11,6 +11,22 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :lms_courseid %><br>
+    <%= f.text_field :lms_courseid %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.datetime_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br>
+    <%= f.datetime_select :end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
