@@ -15,12 +15,13 @@ class Session
     @course_id = params[:custom_canvas_course_id]
     @course_name = params[:context_title]
     @other_students = []
-    @errors = ActiveModel::Errors.new
+    @errors = ActiveModel::Errors.new(self)
   end
 
   def populate_rating_info
     self.errors.add(:base, "You don't appear to be in any groups.") and return unless
       members = find_group_for_student
+    @rater = Student.from_lms_sid(@student_id)
     @other_students = members.map { |student| Student.from_hash(student) }
   end
 

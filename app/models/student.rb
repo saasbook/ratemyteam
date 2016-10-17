@@ -17,5 +17,9 @@ class Student < ActiveRecord::Base
     raise InvalidStudentRecordError unless lms_sid==student.lms_sid && institution_sid==student.institution_sid
     student.id
   end
-  
+
+  def self.from_lms_sid(sid)
+    Student.where("lms_sid = ?", @student_id).limit(1)  ||
+      Student.create!(
+  end
 end

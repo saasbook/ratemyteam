@@ -57,6 +57,7 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
+  c.filter_sensitive_data("<CANVAS_API_KEY>") { Figaro.env.canvas_api_key }
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   c.configure_rspec_metadata!

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://bcourses.berkeley.edu/api/v1/courses/1451720/groups?access_token=1072~Zm4iiMS6qas0RPB7sma5ICpAdLJKU0UMMyeP56yBrxUkL8aANpXnAooC0d3NI2TP
+    uri: https://bcourses.berkeley.edu/api/v1/courses/1451720/groups?access_token=<CANVAS_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -79,7 +79,7 @@ http_interactions:
   recorded_at: Mon, 17 Oct 2016 00:50:14 GMT
 - request:
     method: get
-    uri: https://bcourses.berkeley.edu/api/v1/groups/229826/users?access_token=1072~Zm4iiMS6qas0RPB7sma5ICpAdLJKU0UMMyeP56yBrxUkL8aANpXnAooC0d3NI2TP
+    uri: https://bcourses.berkeley.edu/api/v1/groups/229826/users?access_token=<CANVAS_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -160,7 +160,7 @@ http_interactions:
   recorded_at: Mon, 17 Oct 2016 00:50:14 GMT
 - request:
     method: get
-    uri: https://bcourses.berkeley.edu/api/v1/groups/229874/users?access_token=1072~Zm4iiMS6qas0RPB7sma5ICpAdLJKU0UMMyeP56yBrxUkL8aANpXnAooC0d3NI2TP
+    uri: https://bcourses.berkeley.edu/api/v1/groups/229874/users?access_token=<CANVAS_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
