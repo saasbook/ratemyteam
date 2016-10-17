@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20161016233354) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "stars"
+    t.string  "comments"
     t.integer "student_id"
     t.integer "rater_id"
     t.integer "iteration_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "lms_sid"
-    t.string "institution_sid"
+    t.string "ucb_sid"
     t.string "name"
   end
 

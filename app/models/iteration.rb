@@ -8,6 +8,8 @@ class Iteration < ActiveRecord::Base
 
   validate :nonoverlapping
 
+  attr_accessor :other_students
+
   private
 
   def nonoverlapping
@@ -17,9 +19,11 @@ class Iteration < ActiveRecord::Base
         self.end.between?(iter.start,iter.end)
     end
   end
-  
+
+  public
+
   def self.current_iteration_for(course)
-    Iteration.where("(lms_courseid = ?) AND (? BETWEEN start AND end", course, Time.now).limit(1)
+    Iteration.where("(lms_courseid = ?) AND (? BETWEEN start AND end)", course, Time.now).first
   end
 
 end

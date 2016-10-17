@@ -50,6 +50,7 @@ group :test do
   gem 'factory_girl'
   gem 'vcr'
   gem 'webmock'
+  gem 'timecop'
 end
 
 group :development do

@@ -9,11 +9,15 @@ describe 'Canvas-initiated session' do
       :context_title => 'Software Engineering F16')
   end
   describe 'populating' do
-    it 'finds correct group' do
-      VCR.use_cassette('lookup_group') do
-        others = @s.find_group_for_student
+    describe 'finds group' do
+      before :each do
+        VCR.use_cassette('lookup_group') { @others = @s.find_group_for_student }
+      end
+      specify 'and length is correct' do
+        expect(others.length).to eq 5
+      end
+      specify 'and membership is correct' do
         group = [4935956,4857339,4919912,4612018,4920351]
-        expect(others.length).to eq(group.length)
         group.each do |member_id|
           expect(others.select { |s| s['id'].to_s == member_id.to_s }.length).to eq(1)
         end

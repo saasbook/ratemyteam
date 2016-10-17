@@ -1,12 +1,12 @@
 class InitialMigration < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.string :lms_sid
-      t.string :institution_sid
+      t.string :ucb_sid
       t.string :name
     end
     create_table :ratings do |t|
       t.integer :stars
+      t.string :comments
       t.references :student
       t.references :rater
       t.references :iteration
