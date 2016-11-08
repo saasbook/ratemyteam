@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Iteration.create!(
+  :description => "Iter1",
+  :lms_courseid => "1451720",
+  :start_time => 1.day.ago,
+  :end_time => 6.days.from_now
+  )

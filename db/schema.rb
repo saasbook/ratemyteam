@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20161016233354) do
   create_table "iterations", force: :cascade do |t|
     t.string   "description"
     t.string   "lms_courseid"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "ratings", force: :cascade do |t|

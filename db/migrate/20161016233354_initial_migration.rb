@@ -14,8 +14,8 @@ class InitialMigration < ActiveRecord::Migration
     create_table :iterations do |t|
       t.string :description
       t.string :lms_courseid
-      t.datetime :start
-      t.datetime :end
+      t.datetime :start_time
+      t.datetime :end_time
     end
   end
 end
